@@ -47,7 +47,7 @@ class Square:
         Returns:
             None
         """
-        if not isinstance(size, int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
@@ -60,7 +60,10 @@ class Square:
         Returns:
             None
         """
-        for i in range(1, self.__size + 1):
-            for j in range(1, self.__size + 1):
-                print("#", end="")
+        if self.__size == 0:
             print()
+        else:
+            for i in range(1, self.__size + 1):
+                for j in range(1, self.__size + 1):
+                    print("#", end="")
+                print()
