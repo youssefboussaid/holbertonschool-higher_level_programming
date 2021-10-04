@@ -97,10 +97,15 @@ class Rectangle:
         Return:
             printed rectangle widh '#'
             """
+        my_str=""
         if self.__width == 0 or self.__height == 0:
             return ""
-        sy = str(self.print_symbol)
-        return ((sy*self.__width + "\n")*self.__height)[:-1]
+        for i in range(self.__height):
+            for j in range(self.__width):
+                my_str += str(self.print_symbol)
+            if i < self.__height - 1:
+                my_str += "\n"
+        return my_str
 
     def __repr__(self):
         """
