@@ -1,0 +1,17 @@
+The ``text_indentation` module
+===============================================================================
+Using ``text_indentation``
+-------------------------------------------------------------------------------
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("")
+>>> text_indentation("Lorem ipsum dolor sit amet consectetur. Hello ipsum.")
+Lorem ipsum dolor sit amet consectetur.
+<BLANKLINE>
+Hello ipsum.
+<BLANKLINE>
+>>> text_indentation("Lorem ipsum dolor sit amet consectetur? Hello ipsum.")
+Lorem ipsum dolor sit amet consectetur?
+<BLANKLINE>
+Hello ipsum.
+<BLANKLINE>
