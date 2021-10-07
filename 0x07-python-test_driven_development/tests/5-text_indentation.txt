@@ -4,14 +4,16 @@ Using ``text_indentation``
 -------------------------------------------------------------------------------
 
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("")
->>> text_indentation("Lorem ipsum dolor sit amet consectetur. Hello ipsum.")
-Lorem ipsum dolor sit amet consectetur.
+
+>>> text_indentation(1236)
+Traceback (most recent call last):
+TypeError: text must be string
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("holbie? yees")
+holbie?
 <BLANKLINE>
-Hello ipsum.
-<BLANKLINE>
->>> text_indentation("Lorem ipsum dolor sit amet consectetur? Hello ipsum.")
-Lorem ipsum dolor sit amet consectetur?
-<BLANKLINE>
-Hello ipsum.
-<BLANKLINE>
+yees
