@@ -1,22 +1,28 @@
-#!/usr/bin/python3
-"""
-variables additions module
-"""
+The ``0-add_integer`` module
+============================
 
+Using ``add_integer``
+---------------------
 
-def add_integer(a, b=98):
-    """
-    ADD Two integer a and b
-    Args:
-        a (int/float): first int
-        b (int/float): Second int
-    Raises:
-        TypeError: in case the arguments are not int or float
-        (int) : Sum of the int a and b
-    """
-    if isinstance(a, int) == False and isinstance(a, float) == False:
-        raise TypeError("a must be an integer")
-    if isinstance(b, int) == False and isinstance(b, float) == False:
-        raise TypeError("b must be an integer")
-    else:
-        return(int(a + b))
+This is the first test file.
+first import the funtion add_integer
+
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> print(add_integer(1, 2))
+3
+>>> print(add_integer(100, -2))
+98
+>>> print(add_integer(2))
+100
+>>> print(add_integer(100.3, -2))
+98
+>>> try:
+...     print(add_integer(4, "School"))
+... except Exception as e:
+...     print(e)
+b must be an integer
+>>> try:
+...     print(add_integer(None))
+... except Exception as e:
+...     print(e)
+a must be an integer
