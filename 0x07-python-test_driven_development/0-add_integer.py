@@ -1,28 +1,22 @@
-The ``0-add_integer`` module
-============================
+#!/usr/bin/python3
+"""
+add 2 integers module
+"""
 
-Using ``add_integer``
----------------------
 
-This is the first test file.
-first import the funtion add_integer
-
->>> add_integer = __import__('0-add_integer').add_integer
->>> print(add_integer(1, 2))
-3
->>> print(add_integer(100, -2))
-98
->>> print(add_integer(2))
-100
->>> print(add_integer(100.3, -2))
-98
->>> try:
-...     print(add_integer(4, "School"))
-... except Exception as e:
-...     print(e)
-b must be an integer
->>> try:
-...     print(add_integer(None))
-... except Exception as e:
-...     print(e)
-a must be an integer
+def add_integer(a, b=98):
+    """
+    function that adds 2 integers.
+    Args:
+        a (int/float): the first given number
+        b (int/float): the second given number
+    Raises:
+        TypeError: when a and b are not integers or floats
+    Returns:
+        an integer equal to the addition of a and b
+    """
+    if type(a) != int and type(a) != float:
+        raise TypeError("a must be an integer")
+    if type(b) != int and type(b) != float:
+        raise TypeError("b must be an integer")
+    return int(a) + int(b)
