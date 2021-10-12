@@ -1,52 +1,57 @@
-The ``my_list`` module
-===============================================================================
-Using ``my_list``
--------------------------------------------------------------------------------
+The ``1-my_list`` module
+======================
 
-Import my_list from 1-my_list
+Using ``MyList``
+-------------------
 
-    >>> my_list = __import__('1-my_list').my_list
-    
+Importing the function from the module:
+    >>> MyList = __import__("1-my_list").MyList
 
-Test1:
+Testing for module docstring:
+    >>> m = __import__("1-my_list").__doc__
+    >>> len(m) > 1
+    True
 
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> my_list.print_sorted()
-        [1, 2, 3, 4, 5]
-    >>> print(my_list)
-        [1, 4, 2, 3, 5]
-    
+Testing for class docstring:
+    >>> c = __import__("1-my_list").MyList.__doc__
+    >>> len(c) > 1
+    True
 
-Test2:
-    >>> my_list = MyList([0, -5, 7, -2, 1])
-    >>> my_list.print_sorted()
-        [-5, -2, 0, 1, 7]
-    >>> print(my_list)
-        [0, -5, 7, -2, 1]
+Testing for method docstring:
+	>>> mod = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(mod) > 1
+	True
 
-Test3:
-    >>> my_list = MyList([])
-    >>> my_list.print_sorted()
-        []
-    >>> print(my_list)
-        []
+Testing that MyList inherits from list:
+	>>> issubclass(MyList, list)
+	True
 
-Test4:
-    >>> my_list = MyList(["YOUSSEF", "AT", "Holberton"])
-    >>> my_list.print_sorted()
-        ['AT', 'Holberton', 'YOUSSEF']
-    >>> print(my_list)
-        ['YOUSSEF', 'AT', 'Holberton']
+Testing for empty list:
+	>>> l = MyList()
+	>>> l.print_sorted()
+	[]
 
-Test5: testing with a float arg so it returns an integer after
-    >>> my_list = MyList()
-    >>> my_list.append(5)
-    >>> my_list.print_sorted()
-        [5]
-    >>> print(my_list)
-        [5]
+Testing that appendng works:
+	>>> l.append(1)
+	>>> l.append(2)
+	>>> l.append(3)
+	>>> l.append(4)
+	>>> print(l)
+	[1, 2, 3, 4]
+
+Testing for list already in correct order:
+	>>> l.print_sorted()
+	[1, 2, 3, 4]
+
+Testing for reversed order list:
+	>>> l = MyList()
+	>>> l.append(4)
+	>>> l.append(3)
+	>>> l.append(2)
+	>>> l.append(1)
+	>>> print(l)
+	[4, 3, 2, 1]
+	>>> l.print_sorted()
+	[1, 2, 3, 4]
+	>>> print(l)
+	[4, 3, 2, 1]
