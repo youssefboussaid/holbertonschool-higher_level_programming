@@ -24,4 +24,3 @@ class Student():
         """ replace attributes of Student instance"""
         for i, j in json.items():
             self.__dict__[i] = j
-              
