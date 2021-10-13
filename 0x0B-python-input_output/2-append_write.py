@@ -5,7 +5,7 @@ module  that appends a string at the end of a text file (UTF8) and returns the n
 
 
 def append_write(filename="", text=""):
-    """add func"""
+    """write to a fiel function"""
     with open(filename, "a+", encoding="utf-8") as filename:
         filename.write(text)
         return len(text)
