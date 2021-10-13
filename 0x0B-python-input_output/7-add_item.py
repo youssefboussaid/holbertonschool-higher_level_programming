@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-"""module to add to json file
 """
-import sys
+add module
+"""
 
+
+from sys import argv
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-l = []
-open(add_item.json, "a")
+filename = "add_item.json"
+
 try:
-    l = load_from_json_file("add_item.json")
-except Exception:
-    l = []
-save_to_json_file(l + sys.argv[1:], "add_item.json")
+    text = load_from_json_file(filename)
+except FileNotFoundError:
+    text = []
+
+save_to_json_file(text + argv[1:], filename)
