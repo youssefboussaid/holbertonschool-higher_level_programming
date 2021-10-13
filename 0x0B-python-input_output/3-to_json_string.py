@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-module  that appends a string at the end of a text file (UTF8) and returns the number of characters added
+a module convert object to json string
 """
+import json
 
 
-def append_write(filename="", text=""):
-    """add func"""
-    with open(filename, "a+", encoding="utf-8") as filename:
-        filename.write(text)
-        return len(text)
+def to_json_string(my_obj):
+    """ return a json representation of the object """
+    return json.dumps(my_obj)
+    
