@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-es an Object to a text file, using a JSON representation
+saves an Object to a text file, using a JSON representation
 """
 
 
