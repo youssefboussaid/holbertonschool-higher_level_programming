@@ -18,7 +18,6 @@ class Square(Rectangle):
             self.id, self.x, self.y, self.width
         ))
 
-
     @property
     def size(self):
         """size getter"""
@@ -60,4 +59,3 @@ class Square(Rectangle):
     def to_dictionary(self):
         """dict methdoe"""
         return {'id': self.id, 'size': self.width, 'x': self.x, 'y': self.y}
-        
