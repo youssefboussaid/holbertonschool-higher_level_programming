@@ -50,4 +50,3 @@ class Base:
             return []
         else:
             return json.loads(json_string)
-    
