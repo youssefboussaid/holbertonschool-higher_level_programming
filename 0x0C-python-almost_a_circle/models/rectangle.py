@@ -119,7 +119,8 @@ class Rectangle(Base):
                         self.x = kwargs["x"]
                     if i == "y":
                         self.y = kwargs["y"]
+
     def to_dictionary(self):
         """dict methdoe"""
         return {'id': self.id, 'width': self.width, "height": self.height,
-         'x': self.x, 'y': self.y}
+                'x': self.x, 'y': self.y}
