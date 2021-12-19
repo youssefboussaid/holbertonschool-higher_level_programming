@@ -30,8 +30,8 @@ if __name__ == "__main__":
     if results == ():
         print("")
     else:
-        for row in range(len(results)):
-            if row == len(results) - 1:
+        for i in range(len(results)):
+            if i == len(results) - 1:
                 print(results[i][0])
             else:
                 print("{}, ".format(results[i][0]), end="")
