@@ -13,9 +13,9 @@ if __name__ == "__main__":
                            format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
     # access the table (like cursor)
     Base.metadata.create_all(engine)
-    # talk to the database using a session
-    mysession = Session(engine)
-    states = mysession.query(State).order_by(State.id.asc()).all()
+
+    session = Session(engine)
+    states = session.query(State).order_by(State.id.asc()).all()
     for state in states:
         print("{}: {}".format(state.id, state.name))
-    mysession.close()
+    session.close()
