@@ -16,7 +16,8 @@ if __name__ == "__main__":
     # prepare a cursor object using cursor() method
     cursor = db.cursor()
     # sql query string to be executed on the database
-    sql = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id".format(argv[4])
+    sql = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id".format(
+        argv[4])
     # Execute the SQL command
     cursor.execute(sql)
     # Fetch all the rows in a list of lists.
