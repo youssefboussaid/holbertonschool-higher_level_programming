@@ -6,6 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from model_state import Base, State
 from sys import argv
+
 if __name__ == "__main__":
     # connect to database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
