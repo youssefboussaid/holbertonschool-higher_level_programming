@@ -14,7 +14,6 @@ if __name__ == "__main__":
     user = argv[1]
     password = argv[2]
     database = argv[3]
-    state_name = argv[4]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
                            (user, password, database), pool_pre_ping=True)
