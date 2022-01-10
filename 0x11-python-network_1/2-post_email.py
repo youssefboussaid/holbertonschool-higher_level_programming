@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-"""Python script that takes in a URLand an email, sends a POST
-request to the passed URL with the email as a parameter, and
-displays the body of the response (decoded in utf-8)"""
-
-import sys
-import urllib.request
-import urllib.parse
-
+"""script for testing POST requests so servers
+"""
 if __name__ == "__main__":
-    values = {"email": sys.argv[2]}
-    data = urllib.parse.urlencode(values)
-    data = data.encode('utf-8')
-    with urllib.request.urlopen("http://0.0.0.0:5000/post_email", data) as req:
-        print(req.read().decode('utf-8'))
+    import urllib.request
+    import urllib.parse
+    import sys
+    url = sys.argv[1]
+    email = sys.argv[2]
+    payload = {'email': email}
+    payload = urllib.parse.urlencode(payload)
+    payload = payload.encode('ascii')
+    req = urllib.request.Request(url, payload)
+    with urllib.request.urlopen(req) as response:
+        print(response.read().decode('utf-8'))
